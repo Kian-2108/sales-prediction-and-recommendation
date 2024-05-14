@@ -1,0 +1,424 @@
+{
+    "product clustering shape": {
+       "value": [
+          87,
+          15
+       ],
+       "description": "Size of product clustering data"
+    },
+    "product clustering features": {
+       "value": [
+          "srp_2_code",
+          "srp_2_desc",
+          "new_srp_2_code",
+          "new_srp_2_desc",
+          "product_type",
+          "location",
+          "srp_3_desc",
+          "sales_list",
+          "salesforce_list",
+          "rental_list",
+          "order_list",
+          "avg_order_amount",
+          "avg_sales_per_year",
+          "opp_won_list",
+          "opp_lost_list"
+       ],
+       "description": "Features of product clustering data"
+    },
+    "product clustering product count": {
+       "value": 87,
+       "description": "No. of unique products in product clustering data"
+    },
+    "product clustering weights": {
+       "value": {
+          "product_type": 9.0,
+          "location": 10.0,
+          "avg_order_amount": 3.0,
+          "rental_list": 1.0,
+          "salesforce_list": 1.0,
+          "avg_sales_per_year": 1.0,
+          "order_list": 1.0,
+          "opp_lost_list": 3.0,
+          "sales_list": 3.0
+       },
+       "description": "Set of weights for product clustering"
+    },
+    "product clustering cutoff distance": {
+       "value": 2,
+       "description": "Cutoff distance for product clustering"
+    },
+    "product clustering n clusters": {
+       "value": 87,
+       "description": "No. of product clusters"
+    },
+    "product clustering silh score": {
+       "value": 0.6221,
+       "description": "Avg. Silhouette Score for product clustering"
+    },
+    "product clustering wcss score": {
+       "value": 9.6481,
+       "description": "WCSS for product clustering"
+    },
+    "prediction train shape": {
+       "value": [
+          533960,
+          23
+       ],
+       "description": "Size of prediction train data"
+    },
+    "prediction train features": {
+       "value": [
+          "addr_ln_1",
+          "bill_to_yn",
+          "city",
+          "county",
+          "csms_prod_family_desc",
+          "customer_num",
+          "customer_price_group",
+          "customer_price_group_desc",
+          "hdr_supergroup",
+          "hdr_supergroup_desc",
+          "primary_physical_loc_yn",
+          "search_type",
+          "ship_to_yn",
+          "dtl_item_cd",
+          "dtl_line_type",
+          "item_desc",
+          "family",
+          "csms_prod_family",
+          "srp_2_desc",
+          "iswon",
+          "dtl_qty_ordered",
+          "dtl_unit_cost",
+          "dtl_unit_price"
+       ],
+       "description": "Features of prediction train data"
+    },
+    "prediction train customer count": {
+       "value": 6044,
+       "description": "No. of unique customers in prediction train data"
+    },
+    "prediction train product count": {
+       "value": 46,
+       "description": "No. of unique products in prediction train data"
+    },
+    "prediction train pair count": {
+       "value": 46394,
+       "description": "No. of unique customer-product pairs in prediction train data"
+    },
+    "prediction test shape": {
+       "value": [
+          48315,
+          23
+       ],
+       "description": "Size of prediction test data"
+    },
+    "prediction test features": {
+       "value": [
+          "addr_ln_1",
+          "bill_to_yn",
+          "city",
+          "county",
+          "csms_prod_family_desc",
+          "customer_num",
+          "customer_price_group",
+          "customer_price_group_desc",
+          "hdr_supergroup",
+          "hdr_supergroup_desc",
+          "primary_physical_loc_yn",
+          "search_type",
+          "ship_to_yn",
+          "dtl_item_cd",
+          "dtl_line_type",
+          "item_desc",
+          "family",
+          "csms_prod_family",
+          "srp_2_desc",
+          "iswon",
+          "dtl_qty_ordered",
+          "dtl_unit_cost",
+          "dtl_unit_price"
+       ],
+       "description": "Features of prediction test data"
+    },
+    "prediction test customer count": {
+       "value": 3755,
+       "description": "No. of unique customers in prediction test data"
+    },
+    "prediction test product count": {
+       "value": 39,
+       "description": "No. of unique products in prediction test data"
+    },
+    "prediction test pair count": {
+       "value": 11104,
+       "description": "No. of unique customer-product pairs in prediction test data"
+    },
+    "customer clustering weights": {
+       "value": {
+          "Hospital Type": 9.0,
+          "customer_type": 10.0,
+          "active_cust_yn": 1.0,
+          "customer_class": 1.0,
+          "Bed Utilization Rate": 2.0,
+          "340B Classification": 1.0,
+          "sales_list": 3.0,
+          "rental_list": 1.0,
+          "customer_price_group": 1.0
+       },
+       "description": "Set of weights for customer clustering"
+    },
+    "customer clustering cutoff distance": {
+       "value": 10,
+       "description": "Cutoff distance for customer clustering"
+    },
+    "customer clustering n clusters": {
+       "value": 10,
+       "description": "No. of customer clusters"
+    },
+    "customer clustering silh score": {
+       "value": 0.7075,
+       "description": "Avg. Silhouette Score for customer clustering"
+    },
+    "customer clustering wcss score": {
+       "value": 5234.2747,
+       "description": "WCSS for customer clustering"
+    },
+    "propensity train shape": {
+       "value": [
+          11544,
+          24
+       ],
+       "description": "Size of propensity train data"
+    },
+    "propensity train features": {
+       "value": [
+          "customer_num",
+          "srp_2_desc",
+          "dtl_invoice_dt",
+          "dtl_line_type_desc",
+          "dtl_qty_ordered",
+          "dtl_unit_cost",
+          "dtl_unit_price",
+          "dtl_value_package_desc",
+          "hdr_supergroup_desc",
+          "total_discount",
+          "item_desc",
+          "csms_prod_family_desc",
+          "srp_1_desc",
+          "srp_3_desc",
+          "active_cust_yn",
+          "bill_to_yn",
+          "city",
+          "county",
+          "customer_price_group_desc",
+          "customer_type_desc",
+          "primary_physical_loc_yn",
+          "DayDiffMean",
+          "DayDiffStd",
+          "LastPurchaseToCutoff"
+       ],
+       "description": "Features of propensity train data"
+    },
+    "propensity train customer count": {
+       "value": 4106,
+       "description": "No. of unique customers in propensity train data"
+    },
+    "propensity train product count": {
+       "value": 42,
+       "description": "No. of unique products in propensity train data"
+    },
+    "propensity train pair count": {
+       "value": 11544,
+       "description": "No. of unique customer-product pairs in propensity train data"
+    },
+    "propensity test shape": {
+       "value": [
+          2887,
+          24
+       ],
+       "description": "Size of propensity test data"
+    },
+    "propensity test features": {
+       "value": [
+          "customer_num",
+          "srp_2_desc",
+          "dtl_invoice_dt",
+          "dtl_line_type_desc",
+          "dtl_qty_ordered",
+          "dtl_unit_cost",
+          "dtl_unit_price",
+          "dtl_value_package_desc",
+          "hdr_supergroup_desc",
+          "total_discount",
+          "item_desc",
+          "csms_prod_family_desc",
+          "srp_1_desc",
+          "srp_3_desc",
+          "active_cust_yn",
+          "bill_to_yn",
+          "city",
+          "county",
+          "customer_price_group_desc",
+          "customer_type_desc",
+          "primary_physical_loc_yn",
+          "DayDiffMean",
+          "DayDiffStd",
+          "LastPurchaseToCutoff"
+       ],
+       "description": "Features of propensity test data"
+    },
+    "propensity test customer count": {
+       "value": 2018,
+       "description": "No. of unique customers in propensity test data"
+    },
+    "propensity test product count": {
+       "value": 38,
+       "description": "No. of unique products in propensity test data"
+    },
+    "propensity test pair count": {
+       "value": 2887,
+       "description": "No. of unique customer-product pairs in propensity test data"
+    },
+    "propensity train test accuracy": {
+       "value": {
+          "train accuracy": 1.0,
+          "test accuracy": 0.8256688963210702
+       },
+       "description": "Train and Test accuracy of propensity model"
+    },
+    "propensity report": {
+       "value": {
+          "0": {
+             "precision": 0.8481210855949896,
+             "recall": 0.9280411193603655,
+             "f1-score": 0.8862830651758931,
+             "support": 1751
+          },
+          "1": {
+             "precision": 0.7352941176470589,
+             "recall": 0.5460218408736349,
+             "f1-score": 0.6266786034019697,
+             "support": 641
+          },
+          "accuracy": 0.8256688963210702,
+          "macro avg": {
+             "precision": 0.7917076016210243,
+             "recall": 0.7370314801170001,
+             "f1-score": 0.7564808342889313,
+             "support": 2392
+          },
+          "weighted avg": {
+             "precision": 0.8178860996189763,
+             "recall": 0.8256688963210702,
+             "f1-score": 0.8167151471169112,
+             "support": 2392
+          }
+       },
+       "description": "Report of propensity model"
+    },
+    "propensity confusion": {
+       "value": [
+          [
+             1625,
+             126
+          ],
+          [
+             291,
+             350
+          ]
+       ],
+       "description": "Confusion matrix of propensity model"
+    },
+    "prediciton train test accuracy": {
+       "value": {
+          "train accuracy": 0.9971027792343996,
+          "test accuracy": 0.9756626981516806
+       },
+       "description": "Train and Test accuracy of prediction model"
+    },
+    "prediction report": {
+       "value": {
+          "False": {
+             "precision": 1.0,
+             "recall": 0.2925430210325048,
+             "f1-score": 0.4526627218934911,
+             "support": 1569
+          },
+          "True": {
+             "precision": 0.9754152823920266,
+             "recall": 1.0,
+             "f1-score": 0.9875546585940128,
+             "support": 44040
+          },
+          "accuracy": 0.9756626981516806,
+          "macro avg": {
+             "precision": 0.9877076411960133,
+             "recall": 0.6462715105162524,
+             "f1-score": 0.7201086902437519,
+             "support": 45609
+          },
+          "weighted avg": {
+             "precision": 0.9762610238449615,
+             "recall": 0.9756626981516806,
+             "f1-score": 0.9691537848918244,
+             "support": 45609
+          }
+       },
+       "description": "Report of prediction model"
+    },
+    "prediction confusion": {
+       "value": [
+          [
+             459,
+             1110
+          ],
+          [
+             0,
+             44040
+          ]
+       ],
+       "description": "Confusion matrix of prediction model"
+    },
+    "recommendable customers": {
+       "value": 15874,
+       "description": "No. customers known to the recommendation model"
+    },
+    "recommendable clusters": {
+       "value": 6,
+       "description": "No. clusters known to the recommendation model"
+    },
+    "over all mrr": {
+       "value": 0.21919357303407577,
+       "description": "Mean reciprocal rank for purchase events after cutoff"
+    },
+    "recommendation test shape": {
+       "value": [
+          75371,
+          5
+       ],
+       "description": "Size of recommendation test data"
+    },
+    "recommendation test features": {
+       "value": [
+          "customer_num",
+          "srp_2_desc",
+          "rank",
+          "reciprocal_rank",
+          "location"
+       ],
+       "description": "Features of recommendation test data"
+    },
+    "recommendation test customer count": {
+       "value": 3658,
+       "description": "No. of unique customers in recommendation test data"
+    },
+    "recommendation test product count": {
+       "value": 53,
+       "description": "No. of unique products in recommendation test data"
+    },
+    "recommendation test pair count": {
+       "value": 10801,
+       "description": "No. of unique customer-product pairs in recommendation test data"
+    }
+ }
