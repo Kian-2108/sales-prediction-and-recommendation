@@ -1,5 +1,6 @@
 # Databricks notebook source
 from packages.utils import utils
+import json
 import os
 import pandas as pd
 import numpy as np
@@ -9,8 +10,12 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import gradio as gr
 
-# COMMAND ----------
 
+with open("./config.json","r") as f:
+    config = json.load(f)
+with open("./stats.json","r") as f:
+    stats = json.load(f)
+    
 config = utils.read_config()
 data_version = config["data_version"]["value"]
 cutoff_date = config["cutoff_date"]["value"]
