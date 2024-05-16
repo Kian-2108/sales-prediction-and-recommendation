@@ -1,0 +1,118 @@
+{
+    "data_version": {
+        "value": "TESTING_V1",
+        "description": "(str) Used to refer to the data created in all the notebooks run"
+    },
+    "CSD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Capital_Customer_Products_Sales.csv",
+        "description": "(str) Path to the file containing customer sales data"
+    },
+    "SFD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_SalesForce_Data.csv",
+        "description": "(str) Path to the file containing salesforce data"
+    },
+    "RSD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Rental_Sales.csv",
+        "description": "(str) Path to the file containing rental sales data"
+    },
+    "CWD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Definitive_JDE_Crosswalk.csv",
+        "description": "(str) Path to the file containing the crosswalk data "
+    },
+    "CBD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Customers_Active_Inactive_Baseline.csv",
+        "description": "(str) Path to the file containing customer baseline data"
+    },
+    "EDD_path": {
+        "value": "./data/DATA_VERSIONS/RAW/Definitive_Data_Excel.csv",
+        "description": "(str) Path to the file containing external definitive data"
+    },
+    "CPL_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Curated_Product_List_V1.csv",
+        "description": "(str) Path to the file containing the curated product list data"
+    },
+    "UPL_path": {
+        "value": "./data/DATA_VERSIONS/RAW/ML_Unfiltered_Product_List_V1.csv",
+        "description": "(str) Path to the file containing the unfiltered product list data"
+    },
+    "cutoff_date": {
+        "value": "2021-12-31",
+        "description": "(YYYY-MM-DD) The date used as a cutoff point for the analysis"
+    },
+    "run_customer_feature_wrapping": {
+        "value": false,
+        "description": "(bool) Flag indicating whether customer feature wrapping should be performed"
+    },
+    "customer_feature_wrapping_version": {
+        "value": "2021_V2_UPDATED",
+        "description": "(str) The 'data_version' tag whoes feature wrapping result should be used"
+    },
+    "customer_top_feature": {
+        "value": 12,
+        "description": "(int) The number of top customer features to select"
+    },
+    "run_customer_weight_tuning": {
+        "value": false,
+        "description": "(bool) Flag indicating whether customer weight tuning should be performed"
+    },
+    "customer_weight_tuning_version": {
+        "value": "2021_V2_FULLRUN",
+        "description": "(str) The 'data_version' tag whoes weight tuning result should be used"
+    },
+    "customer_weight_tuning_trials": {
+        "value": 10,
+        "description": "(int) Number of trials to run for finding optimized set of weights"
+    },
+    "customer_clustering_cutoff_distance": {
+        "value": 10,
+        "description": "(float) The cutoff point for the number of customer clusters to create"
+    },
+    "run_product_feature_wrapping": {
+        "value": false,
+        "description": "(bool) Flag indicating whether customer feature wrapping should be performed"
+    },
+    "product_feature_wrapping_version": {
+        "value": "2021_V2_UPDATED",
+        "description": "(str) The 'data_version' tag whoes feature wrapping result should be used"
+    },
+    "product_top_feature": {
+        "value": 10,
+        "description": "(int) The number of top customer features to select"
+    },
+    "run_product_weight_tuning": {
+        "value": false,
+        "description": "(bool) Flag indicating whether product weight tuning should be performed"
+    },
+    "product_weight_tuning_version": {
+        "value": "2021_V2_FULLRUN",
+        "description": "(str) The 'data_version' tag whoes weight tuning result should be used"
+    },
+    "product_weight_tuning_trials": {
+        "value": 10,
+        "description": "(int) Number of trials to run for finding optimized set of weights"
+    },
+    "product_clustering_cutoff_distance": {
+        "value": 2,
+        "description": "(float) The cutoff point for the number of product clusters to create"
+    },
+    "prediction_train_data_sampling": {
+        "value": "default",
+        "description": "(str) Choose whether to use upsampled, downsampled or default train data set for prediction model"
+    },
+    "max_days_between_purchase": {
+        "value": 5000,
+        "description": "(int) The maximum number of days between consecutive purchases"
+    },
+    "near_sale_cutoff": {
+        "value": 365,
+        "description": "(int) The threshold that determines whether the sale is near sale or far sale"
+    },
+    "propensity_train_data_sampling": {
+        "value": "default",
+        "description": "(str) Choose whether to use upsampled, downsampled or default train data set for propensity model"
+    },
+    "matrix_model": {
+        "value": "AlternatingLeastSquares",
+        "description": "(str) Name of the model that should be used for filling the collabrative matrix"
+    }
+}
