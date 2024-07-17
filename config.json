@@ -4,35 +4,35 @@
         "description": "(str) Used to refer to the data created in all the notebooks run"
     },
     "CSD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Capital_Customer_Products_Sales.csv",
+        "value": "./data/DATA_VERSIONS/RAW/CS.parquet",
         "description": "(str) Path to the file containing customer sales data"
     },
     "SFD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_SalesForce_Data.csv",
+        "value": "./data/DATA_VERSIONS/RAW/SF.parquet",
         "description": "(str) Path to the file containing salesforce data"
     },
     "RSD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Rental_Sales.csv",
+        "value": "./data/DATA_VERSIONS/RAW/RS.parquet",
         "description": "(str) Path to the file containing rental sales data"
     },
     "CWD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Definitive_JDE_Crosswalk.csv",
+        "value": "./data/DATA_VERSIONS/RAW/CW.parquet",
         "description": "(str) Path to the file containing the crosswalk data "
     },
     "CBD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Customers_Active_Inactive_Baseline.csv",
+        "value": "./data/DATA_VERSIONS/RAW/CB.parquet",
         "description": "(str) Path to the file containing customer baseline data"
     },
     "EDD_path": {
-        "value": "./data/DATA_VERSIONS/RAW/Definitive_Data_Excel.csv",
+        "value": "./data/DATA_VERSIONS/RAW/ED.parquet",
         "description": "(str) Path to the file containing external definitive data"
     },
     "CPL_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Curated_Product_List_V1.csv",
+        "value": "./data/DATA_VERSIONS/RAW/CP.parquet",
         "description": "(str) Path to the file containing the curated product list data"
     },
     "UPL_path": {
-        "value": "./data/DATA_VERSIONS/RAW/ML_Unfiltered_Product_List_V1.csv",
+        "value": "./data/DATA_VERSIONS/RAW/UP.parquet",
         "description": "(str) Path to the file containing the unfiltered product list data"
     },
     "cutoff_date": {
