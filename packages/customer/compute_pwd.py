@@ -2,11 +2,8 @@ import os
 from ..utils import utils, cluster
 import numpy as np
 import pandas as pd
-from scipy.spatial.distance import pdist
-from sklearn.preprocessing import OrdinalEncoder, MultiLabelBinarizer
 
 config = utils.read_json("./config.json")
-
 data_version = config["data_version"]["value"]
 
 customer_data_path = f"./data/DATA_VERSIONS/{data_version}/CUSTOMER_DATA"

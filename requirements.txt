@@ -3,3 +3,5 @@ dill
 pyarrow
 optuna
 mlflow
+imblearn
+xgboost

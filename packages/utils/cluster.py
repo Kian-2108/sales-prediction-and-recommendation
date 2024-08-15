@@ -31,10 +31,10 @@ def pairwise(seq,typ):
     return pwd
 
 
-def weighted_pairwise(weights):
+def weighted_pairwise(weights,temp_data_path):
     wpwd = None
     for col,wt in weights.items():
-        col_pwd = np.load(col)
+        col_pwd = np.load(f"{temp_data_path}/{col}")
         # col_pwd = utils.read_parquet(f"{data_path}/PWD/{col}.parquet")[col].to_numpy()
         if type(wpwd) == type(None):
             wpwd = col_pwd*wt
@@ -58,7 +58,10 @@ def WCSS(wpwd,clusters):
     return np.diag((np.diag(1/np.unique(clusters,return_counts=True)[1]))@matrix.groupby(matrix.index).sum().groupby(matrix.index,axis=1).sum()).sum()/2
 
 def silhouette_scores(wpwd,clustering):
-    return silhouette_samples(squareform(wpwd),clustering)
+    try:
+        return silhouette_samples(squareform(wpwd),clustering)
+    except:
+        return clustering*0
 
 def silhouette_plot(ss, clusters,weights,metrics):
     n_clusters = len(set(clusters))

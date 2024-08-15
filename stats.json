@@ -1,14 +1,13 @@
 {
    "customer sales shape": {
       "value": [
-         10,
+         104857,
          86
       ],
       "description": "Size of customer sales data"
    },
    "customer sales features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "dtl_actual_ship_dt",
          "config_rollup_cost",
@@ -93,32 +92,32 @@
          "ship_to_yn.1",
          "state",
          "state_desc",
-         "zip"
+         "zip",
+         "active_cust_yn.1"
       ],
       "description": "Features of customer sales data"
    },
    "customer sales customer count": {
-      "value": 1,
+      "value": 5117,
       "description": "No. of unique customers in customer sales data"
    },
    "customer sales product count": {
-      "value": 1,
+      "value": 85,
       "description": "No. of unique products in customer sales data"
    },
    "customer sales pair count": {
-      "value": 1,
+      "value": 21719,
       "description": "No. of unique customer-product pairs in customer sales data"
    },
    "sales force shape": {
       "value": [
-         10,
-         29
+         29605,
+         28
       ],
       "description": "Size of sales force data"
    },
    "sales force features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "opp_id",
          "amount",
@@ -151,27 +150,26 @@
       "description": "Features of sales force data"
    },
    "sales force customer count": {
-      "value": 1,
+      "value": 6834,
       "description": "No. of unique customers in sales force data"
    },
    "sales force product count": {
-      "value": 1,
+      "value": 87,
       "description": "No. of unique products in sales force data"
    },
    "sales force pair count": {
-      "value": 1,
+      "value": 12937,
       "description": "No. of unique customer-product pairs in sales force data"
    },
    "rental sales shape": {
       "value": [
-         10,
-         23
+         572903,
+         22
       ],
       "description": "Size of rental sales data"
    },
    "rental sales features": {
       "value": [
-         "Unnamed: 0",
          "order_type",
          "order_type_desc",
          "ln_type",
@@ -198,27 +196,26 @@
       "description": "Features of rental sales data"
    },
    "rental sales customer count": {
-      "value": 1,
+      "value": 4761,
       "description": "No. of unique customers in rental sales data"
    },
    "rental sales product count": {
-      "value": 1,
+      "value": 42,
       "description": "No. of unique products in rental sales data"
    },
    "rental sales pair count": {
-      "value": 1,
+      "value": 25814,
       "description": "No. of unique customer-product pairs in rental sales data"
    },
    "customer baseline shape": {
       "value": [
-         10,
-         30
+         2857,
+         29
       ],
       "description": "Size of customer baseline data"
    },
    "customer baseline features": {
       "value": [
-         "Unnamed: 0",
          "customer_name",
          "customer_num",
          "active_cust_yn",
@@ -252,19 +249,18 @@
       "description": "Features of customer baseline data"
    },
    "customer baseline customer count": {
-      "value": 1,
+      "value": 2857,
       "description": "No. of unique customers in customer baseline data"
    },
    "customer crosswalk shape": {
       "value": [
-         10,
-         23
+         720,
+         22
       ],
       "description": "Size of customer crosswalk data"
    },
    "customer crosswalk features": {
       "value": [
-         "Unnamed: 0",
          "definitive_id",
          "customer_num",
          "mdm_reltio_uri",
@@ -291,19 +287,18 @@
       "description": "Features of customer crosswalk data"
    },
    "customer crosswalk customer count": {
-      "value": 1,
+      "value": 720,
       "description": "No. of unique customers in customer crosswalk data"
    },
    "external definitive shape": {
       "value": [
-         10,
-         158
+         940,
+         184
       ],
       "description": "Size of external definitive data"
    },
    "external definitive features": {
       "value": [
-         "Unnamed: 0",
          "definitive_id",
          "customer_name",
          "Hospital Type",
@@ -326,6 +321,18 @@
          "Case Mix Index",
          "Cash on Hand",
          "CC/MCC Rate",
+         "Chief Information Officer",
+         "Chief Information Officer Email",
+         "Chief Information Officer Phone",
+         "Chief Information Officer Title",
+         "Chief Nursing Officer",
+         "Chief Nursing Officer Phone",
+         "Chief Nursing Officer Email",
+         "Chief Nursing Officer Title",
+         "Chief Operations Officer",
+         "Chief Operations Officer Email",
+         "Chief Operations Officer Phone",
+         "Chief Operations Officer Title",
          "Chronic Obstructive Pulmonary Disease (COPD) Readmission Rate",
          "Chronic Obstructive Pulmonary Disease COPD Readmission Cases",
          "City",
@@ -338,6 +345,10 @@
          "Definitive IDN Parent ID",
          "Detox Intensive Care Unit Beds",
          "DHC Profile Link",
+         "Director of IT",
+         "Director of IT Email",
+         "Director of IT Phone",
+         "Director of IT Title",
          "Electronic Health/Medical Record - Inpatient",
          "Est No. of ER Visits",
          "Est No. of Inpatient Surgeries",
@@ -389,6 +400,17 @@
          "Ownership",
          "Patient Survey (HCAHPS) Summary Star Rating",
          "Patients at each hospital who reported that yes they were given information about what to do during their recovery at home Star Rating (out of 5)",
+         "Patients who reported that staff Always explained about medicines before giving it to them Star Rating (out of 5)",
+         "Patients who reported that the area around their room was Always quiet at night Star Rating (out of 5)",
+         "Patients who reported that their doctors Always communicated well Star Rating (out of 5)",
+         "Patients who reported that their nurses Always communicated well National AVG",
+         "Patients who reported that their nurses Always communicated well Rate",
+         "Patients who reported that their nurses Always communicated well Star Rating (out of 5)",
+         "Patients who reported that their room and bathroom were Always clean Star Rating (out of 5)",
+         "Patients who reported that they Always received help as soon as they wanted Star Rating (out of 5)",
+         "Patients who reported yes they would definitely recommend the hospital National AVG",
+         "Patients who reported yes they would definitely recommend the hospital Star Rating (out of 5)",
+         "Patients who Strongly Agree they understood their care when they left the hospital Star Rating (out of 5)",
          "Payor Mix: Medicaid Days",
          "Payor Mix: Medicare Days",
          "Payor Mix: Private/Self-Pay/Other Days",
@@ -466,14 +488,13 @@
    },
    "curated products shape": {
       "value": [
-         10,
+         8,
          11
       ],
       "description": "Size of curated products data"
    },
    "curated products features": {
       "value": [
-         "Unnamed: 0",
          "code_srp_2_desc",
          "srp_2_code",
          "product_type",
@@ -481,6 +502,7 @@
          "replacement",
          "replacement_srp_2_code",
          "location",
+         "Unnamed: 7",
          "srp_2_desc",
          "srp_2_replacement",
          "updated"
@@ -488,19 +510,18 @@
       "description": "Features of curated products data"
    },
    "curated products product count": {
-      "value": 1,
+      "value": 8,
       "description": "No. of unique products in curated products data"
    },
    "unfiltered products shape": {
       "value": [
-         10,
-         9
+         52,
+         8
       ],
       "description": "Size of unfiltered products data"
    },
    "unfiltered products features": {
       "value": [
-         "Unnamed: 0",
          "srp_1_code",
          "srp_1_desc",
          "srp_2_code",
@@ -513,19 +534,18 @@
       "description": "Features of unfiltered products data"
    },
    "unfiltered products product count": {
-      "value": 1,
+      "value": 36,
       "description": "No. of unique products in unfiltered products data"
    },
    "before cutoff customer sales shape": {
       "value": [
-         10,
+         103198,
          86
       ],
       "description": "Size of before cutoff customer sales data"
    },
    "before cutoff customer sales features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "dtl_actual_ship_dt",
          "config_rollup_cost",
@@ -610,32 +630,32 @@
          "ship_to_yn.1",
          "state",
          "state_desc",
-         "zip"
+         "zip",
+         "active_cust_yn.1"
       ],
       "description": "Features of before cutoff customer sales data"
    },
    "before cutoff customer sales customer count": {
-      "value": 1,
+      "value": 5098,
       "description": "No. of unique customers in before cutoff customer sales data"
    },
    "before cutoff customer sales product count": {
-      "value": 1,
+      "value": 85,
       "description": "No. of unique products in before cutoff customer sales data"
    },
    "before cutoff customer sales pair count": {
-      "value": 1,
+      "value": 21498,
       "description": "No. of unique customer-product pairs in before cutoff customer sales data"
    },
    "before cutoff sales force shape": {
       "value": [
-         10,
-         29
+         22157,
+         28
       ],
       "description": "Size of before cutoff sales force data"
    },
    "before cutoff sales force features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "opp_id",
          "amount",
@@ -668,27 +688,26 @@
       "description": "Features of before cutoff sales force data"
    },
    "before cutoff sales force customer count": {
-      "value": 1,
+      "value": 6106,
       "description": "No. of unique customers in before cutoff sales force data"
    },
    "before cutoff sales force product count": {
-      "value": 1,
+      "value": 82,
       "description": "No. of unique products in before cutoff sales force data"
    },
    "before cutoff sales force pair count": {
-      "value": 1,
+      "value": 10974,
       "description": "No. of unique customer-product pairs in before cutoff sales force data"
    },
    "before cutoff rental sales shape": {
       "value": [
-         10,
-         23
+         541703,
+         22
       ],
       "description": "Size of before cutoff rental sales data"
    },
    "before cutoff rental sales features": {
       "value": [
-         "Unnamed: 0",
          "order_type",
          "order_type_desc",
          "ln_type",
@@ -715,27 +734,26 @@
       "description": "Features of before cutoff rental sales data"
    },
    "before cutoff rental sales customer count": {
-      "value": 1,
+      "value": 4702,
       "description": "No. of unique customers in before cutoff rental sales data"
    },
    "before cutoff rental sales product count": {
-      "value": 1,
+      "value": 42,
       "description": "No. of unique products in before cutoff rental sales data"
    },
    "before cutoff rental sales pair count": {
-      "value": 1,
+      "value": 25076,
       "description": "No. of unique customer-product pairs in before cutoff rental sales data"
    },
    "after cutoff customer sales shape": {
       "value": [
-         0,
+         1659,
          86
       ],
       "description": "Size of after cutoff customer sales data"
    },
    "after cutoff customer sales features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "dtl_actual_ship_dt",
          "config_rollup_cost",
@@ -820,32 +838,32 @@
          "ship_to_yn.1",
          "state",
          "state_desc",
-         "zip"
+         "zip",
+         "active_cust_yn.1"
       ],
       "description": "Features of after cutoff customer sales data"
    },
    "after cutoff customer sales customer count": {
-      "value": 0,
+      "value": 636,
       "description": "No. of unique customers in after cutoff customer sales data"
    },
    "after cutoff customer sales product count": {
-      "value": 0,
+      "value": 39,
       "description": "No. of unique products in after cutoff customer sales data"
    },
    "after cutoff customer sales pair count": {
-      "value": 0,
+      "value": 785,
       "description": "No. of unique customer-product pairs in after cutoff customer sales data"
    },
    "after cutoff sales force shape": {
       "value": [
-         0,
-         29
+         7448,
+         28
       ],
       "description": "Size of after cutoff sales force data"
    },
    "after cutoff sales force features": {
       "value": [
-         "Unnamed: 0",
          "customer_num",
          "opp_id",
          "amount",
@@ -878,27 +896,26 @@
       "description": "Features of after cutoff sales force data"
    },
    "after cutoff sales force customer count": {
-      "value": 0,
+      "value": 3176,
       "description": "No. of unique customers in after cutoff sales force data"
    },
    "after cutoff sales force product count": {
-      "value": 0,
+      "value": 60,
       "description": "No. of unique products in after cutoff sales force data"
    },
    "after cutoff sales force pair count": {
-      "value": 0,
+      "value": 4043,
       "description": "No. of unique customer-product pairs in after cutoff sales force data"
    },
    "after cutoff rental sales shape": {
       "value": [
-         0,
-         23
+         31200,
+         22
       ],
       "description": "Size of after cutoff rental sales data"
    },
    "after cutoff rental sales features": {
       "value": [
-         "Unnamed: 0",
          "order_type",
          "order_type_desc",
          "ln_type",
@@ -925,20 +942,20 @@
       "description": "Features of after cutoff rental sales data"
    },
    "after cutoff rental sales customer count": {
-      "value": 0,
+      "value": 1963,
       "description": "No. of unique customers in after cutoff rental sales data"
    },
    "after cutoff rental sales product count": {
-      "value": 0,
+      "value": 24,
       "description": "No. of unique products in after cutoff rental sales data"
    },
    "after cutoff rental sales pair count": {
-      "value": 0,
+      "value": 4916,
       "description": "No. of unique customer-product pairs in after cutoff rental sales data"
    },
    "customer clustering shape": {
       "value": [
-         100,
+         8722,
          23
       ],
       "description": "Size of customer clustering data"
@@ -972,7 +989,395 @@
       "description": "Features of customer clustering data"
    },
    "customer clustering customer count": {
-      "value": 1,
+      "value": 8722,
       "description": "No. of unique customers in customer clustering data"
+   },
+   "prediction train shape": {
+      "value": [
+         66647,
+         23
+      ],
+      "description": "Size of prediction train data"
+   },
+   "prediction train features": {
+      "value": [
+         "addr_ln_1",
+         "bill_to_yn",
+         "city",
+         "county",
+         "csms_prod_family_desc",
+         "customer_num",
+         "customer_price_group",
+         "customer_price_group_desc",
+         "hdr_supergroup",
+         "hdr_supergroup_desc",
+         "primary_physical_loc_yn",
+         "search_type",
+         "ship_to_yn",
+         "dtl_item_cd",
+         "dtl_line_type",
+         "item_desc",
+         "family",
+         "csms_prod_family",
+         "srp_2_desc",
+         "iswon",
+         "dtl_qty_ordered",
+         "dtl_unit_cost",
+         "dtl_unit_price"
+      ],
+      "description": "Features of prediction train data"
+   },
+   "prediction train customer count": {
+      "value": 4532,
+      "description": "No. of unique customers in prediction train data"
+   },
+   "prediction train product count": {
+      "value": 36,
+      "description": "No. of unique products in prediction train data"
+   },
+   "prediction train pair count": {
+      "value": 14326,
+      "description": "No. of unique customer-product pairs in prediction train data"
+   },
+   "prediction test shape": {
+      "value": [
+         1443,
+         23
+      ],
+      "description": "Size of prediction test data"
+   },
+   "prediction test features": {
+      "value": [
+         "addr_ln_1",
+         "bill_to_yn",
+         "city",
+         "county",
+         "csms_prod_family_desc",
+         "customer_num",
+         "customer_price_group",
+         "customer_price_group_desc",
+         "hdr_supergroup",
+         "hdr_supergroup_desc",
+         "primary_physical_loc_yn",
+         "search_type",
+         "ship_to_yn",
+         "dtl_item_cd",
+         "dtl_line_type",
+         "item_desc",
+         "family",
+         "csms_prod_family",
+         "srp_2_desc",
+         "iswon",
+         "dtl_qty_ordered",
+         "dtl_unit_cost",
+         "dtl_unit_price"
+      ],
+      "description": "Features of prediction test data"
+   },
+   "prediction test customer count": {
+      "value": 810,
+      "description": "No. of unique customers in prediction test data"
+   },
+   "prediction test product count": {
+      "value": 27,
+      "description": "No. of unique products in prediction test data"
+   },
+   "prediction test pair count": {
+      "value": 977,
+      "description": "No. of unique customer-product pairs in prediction test data"
+   },
+   "customer clustering weights": {
+      "value": {
+         "rental_list": 0.09090909090909091,
+         "sales_list": 0.1,
+         "active_cust_yn": 0.07142857142857142,
+         "340B Classification": 0.05263157894736842,
+         "Bed Utilization Rate": 0.05,
+         "customer_price_group": 0.05,
+         "Capital Expenditures": 0.05,
+         "salesforce_list": 0.06666666666666667,
+         "Hospital Type": 0.07692307692307693,
+         "customer_type": 0.07692307692307693,
+         "purchase_per_year": 0.058823529411764705,
+         "No. of Discharges": 0.058823529411764705,
+         "Net Income": 0.1,
+         "customer_class": 0.07142857142857142,
+         "No. of Staffed Beds": 0.05263157894736842
+      },
+      "description": "Set of weights for customer clustering"
+   },
+   "customer clustering cutoff distance": {
+      "value": 10,
+      "description": "Cutoff distance for customer clustering"
+   },
+   "customer clustering n clusters": {
+      "value": 2,
+      "description": "No. of customer clusters"
+   },
+   "customer clustering silh score": {
+      "value": 0.4405,
+      "description": "Avg. Silhouette Score for customer clustering"
+   },
+   "customer clustering wcss score": {
+      "value": 4203.6622,
+      "description": "WCSS for customer clustering"
+   },
+   "product clustering shape": {
+      "value": [
+         8,
+         15
+      ],
+      "description": "Size of product clustering data"
+   },
+   "product clustering features": {
+      "value": [
+         "srp_2_code",
+         "srp_2_desc",
+         "new_srp_2_code",
+         "new_srp_2_desc",
+         "product_type",
+         "location",
+         "srp_3_desc",
+         "sales_list",
+         "salesforce_list",
+         "rental_list",
+         "order_list",
+         "avg_order_amount",
+         "avg_sales_per_year",
+         "opp_won_list",
+         "opp_lost_list"
+      ],
+      "description": "Features of product clustering data"
+   },
+   "product clustering product count": {
+      "value": 8,
+      "description": "No. of unique products in product clustering data"
+   },
+   "product clustering weights": {
+      "value": {
+         "rental_list": 0.09090909090909091,
+         "avg_order_amount": 0.0625,
+         "sales_list": 0.1,
+         "product_type": 0.08333333333333333,
+         "order_list": 0.1,
+         "salesforce_list": 0.06666666666666667,
+         "opp_lost_list": 0.07692307692307693,
+         "avg_sales_per_year": 0.05555555555555555,
+         "opp_won_list": 0.08333333333333333,
+         "location": 0.125
+      },
+      "description": "Set of weights for product clustering"
+   },
+   "product clustering cutoff distance": {
+      "value": 2,
+      "description": "Cutoff distance for product clustering"
+   },
+   "product clustering n clusters": {
+      "value": 8,
+      "description": "No. of product clusters"
+   },
+   "product clustering silh score": {
+      "value": 0.0,
+      "description": "Avg. Silhouette Score for product clustering"
+   },
+   "product clustering wcss score": {
+      "value": 2.5253,
+      "description": "WCSS for product clustering"
+   },
+   "propensity train shape": {
+      "value": [
+         2374,
+         24
+      ],
+      "description": "Size of propensity train data"
+   },
+   "propensity train features": {
+      "value": [
+         "customer_num",
+         "srp_2_desc",
+         "dtl_invoice_dt",
+         "dtl_line_type_desc",
+         "dtl_qty_ordered",
+         "dtl_unit_cost",
+         "dtl_unit_price",
+         "dtl_value_package_desc",
+         "hdr_supergroup_desc",
+         "total_discount",
+         "item_desc",
+         "csms_prod_family_desc",
+         "srp_1_desc",
+         "srp_3_desc",
+         "active_cust_yn",
+         "bill_to_yn",
+         "city",
+         "county",
+         "customer_price_group_desc",
+         "customer_type_desc",
+         "primary_physical_loc_yn",
+         "DayDiffMean",
+         "DayDiffStd",
+         "LastPurchaseToCutoff"
+      ],
+      "description": "Features of propensity train data"
+   },
+   "propensity train customer count": {
+      "value": 1716,
+      "description": "No. of unique customers in propensity train data"
+   },
+   "propensity train product count": {
+      "value": 27,
+      "description": "No. of unique products in propensity train data"
+   },
+   "propensity train pair count": {
+      "value": 2374,
+      "description": "No. of unique customer-product pairs in propensity train data"
+   },
+   "propensity test shape": {
+      "value": [
+         594,
+         24
+      ],
+      "description": "Size of propensity test data"
+   },
+   "propensity test features": {
+      "value": [
+         "customer_num",
+         "srp_2_desc",
+         "dtl_invoice_dt",
+         "dtl_line_type_desc",
+         "dtl_qty_ordered",
+         "dtl_unit_cost",
+         "dtl_unit_price",
+         "dtl_value_package_desc",
+         "hdr_supergroup_desc",
+         "total_discount",
+         "item_desc",
+         "csms_prod_family_desc",
+         "srp_1_desc",
+         "srp_3_desc",
+         "active_cust_yn",
+         "bill_to_yn",
+         "city",
+         "county",
+         "customer_price_group_desc",
+         "customer_type_desc",
+         "primary_physical_loc_yn",
+         "DayDiffMean",
+         "DayDiffStd",
+         "LastPurchaseToCutoff"
+      ],
+      "description": "Features of propensity test data"
+   },
+   "propensity test customer count": {
+      "value": 542,
+      "description": "No. of unique customers in propensity test data"
+   },
+   "propensity test product count": {
+      "value": 19,
+      "description": "No. of unique products in propensity test data"
+   },
+   "propensity test pair count": {
+      "value": 594,
+      "description": "No. of unique customer-product pairs in propensity test data"
+   },
+   "propensity train test accuracy": {
+      "value": {
+         "train accuracy": 0.9995787700084247,
+         "test accuracy": 0.921875
+      },
+      "description": "Train and Test accuracy of propensity model"
+   },
+   "propensity report": {
+      "value": {
+         "0": {
+            "precision": 0.9315789473684211,
+            "recall": 0.9888268156424581,
+            "f1-score": 0.959349593495935,
+            "support": 179.0
+         },
+         "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 13.0
+         },
+         "accuracy": 0.921875,
+         "macro avg": {
+            "precision": 0.46578947368421053,
+            "recall": 0.49441340782122906,
+            "f1-score": 0.4796747967479675,
+            "support": 192.0
+         },
+         "weighted avg": {
+            "precision": 0.8685032894736842,
+            "recall": 0.921875,
+            "f1-score": 0.8943936314363143,
+            "support": 192.0
+         }
+      },
+      "description": "Report of propensity model"
+   },
+   "propensity confusion": {
+      "value": [
+         [
+            177,
+            2
+         ],
+         [
+            13,
+            0
+         ]
+      ],
+      "description": "Confusion matrix of propensity model"
+   },
+   "prediciton train test accuracy": {
+      "value": {
+         "train accuracy": 0.9987396281903161,
+         "test accuracy": 0.9598540145985401
+      },
+      "description": "Train and Test accuracy of prediction model"
+   },
+   "prediction report": {
+      "value": {
+         "False": {
+            "precision": 1.0,
+            "recall": 0.86810551558753,
+            "f1-score": 0.9293966623876765,
+            "support": 417.0
+         },
+         "True": {
+            "precision": 0.9454365079365079,
+            "recall": 1.0,
+            "f1-score": 0.9719530851606323,
+            "support": 953.0
+         },
+         "accuracy": 0.9598540145985401,
+         "macro avg": {
+            "precision": 0.972718253968254,
+            "recall": 0.934052757793765,
+            "f1-score": 0.9506748737741544,
+            "support": 1370.0
+         },
+         "weighted avg": {
+            "precision": 0.9620445197543738,
+            "recall": 0.9598540145985401,
+            "f1-score": 0.9589997798348494,
+            "support": 1370.0
+         }
+      },
+      "description": "Report of prediction model"
+   },
+   "prediction confusion": {
+      "value": [
+         [
+            362,
+            55
+         ],
+         [
+            0,
+            953
+         ]
+      ],
+      "description": "Confusion matrix of prediction model"
    }
 }

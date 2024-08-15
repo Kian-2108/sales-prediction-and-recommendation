@@ -6,6 +6,16 @@ import json
 import pickle
 import dill
 
+def read_table(file_path):
+    ext = os.path.splitext(file_path)[1]
+    if ext == ".parquet":
+        read_func = pd.read_parquet
+    elif ext == ".csv":
+        read_func = pd.read_csv
+    return read_func(file_path)
+    
+    
+    
 def read_json(file_path):
     with open(file_path,"r") as f:
         return json.load(f)
@@ -21,65 +31,26 @@ def save_stats(stats):
         with open(stats_path,"w") as f:
             json.dump(stats,f,indent=3)
 
-# def save_json(save_path,file_path):
-#     account_key = os.getenv("ACCOUNT_KEY")
-#     account_name = "hrcengagedpocstorageml"
-#     container_name  = "rawdataupload"
-#     connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={account_key};EndpointSuffix=core.windows.net"
-#     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-#     container_client = blob_service_client.get_blob_client(container_name,os.path.join("VIRTUSA",save_path))
+def save_json(save_path,file_path):
+    account_key = os.getenv("ACCOUNT_KEY")
+    account_name = "hrcengagedpocstorageml"
+    container_name  = "rawdataupload"
+    connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={account_key};EndpointSuffix=core.windows.net"
+    blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+    container_client = blob_service_client.get_blob_client(container_name,os.path.join("VIRTUSA",save_path))
 
-#     with open(file_path,"rb") as blob:
-#         container_client.upload_blob(blob,overwrite=True)
+    with open(file_path,"rb") as blob:
+        container_client.upload_blob(blob,overwrite=True)
 
     
-# def save_pkl(model,file_path):
-#     """
-#     Saves a Python model as a pickle file to the specified file path.
+def save_pkl(model,file_path):
+    with open(file_path, "wb") as pkl:
+        dill.dump(model, pkl)
 
-#     Args:
-#         model: The Python model object to be saved.
-#         file_path: The path to save the pickle file.
-
-#     Returns:
-#         None
-#     """
-#     account_key = os.getenv("ACCOUNT_KEY")
-#     account_name = "hrcengagedpocstorageml"
-#     container_name  = "rawdataupload"
-#     connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={account_key};EndpointSuffix=core.windows.net"
-#     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-#     container_client = blob_service_client.get_blob_client(container_name,os.path.join("VIRTUSA",file_path))
-
-#     with open("model.pkl", "wb") as pkl:
-#         dill.dump(model, pkl)
-#     with open("model.pkl","rb") as blob:
-#         container_client.upload_blob(blob,overwrite=True)
-#     dbutils.fs.rm("file:/databricks/driver/model.pkl")
-
-# def read_pkl(file_path):
-#     """
-#     Reads a pickle file from the specified file path and returns the loaded data.
-
-#     Args:
-#         file_path: The path to the pickle file.
-
-#     Returns:
-#         The loaded data from the pickle file.
-#     """
-#     account_key = os.getenv("ACCOUNT_KEY")
-#     account_name = "hrcengagedpocstorageml"
-#     container_name  = "rawdataupload"
-#     connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={account_key};EndpointSuffix=core.windows.net"
-#     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-#     container_client = blob_service_client.get_blob_client(container_name,os.path.join("VIRTUSA",file_path))
-
-#     with open("model.pkl", "wb") as pkl:
-#         pkl.write(container_client.download_blob().readall())
-#     with open("model.pkl","rb") as blob:
-#         data = dill.load(blob)
-#     dbutils.fs.rm("file:/databricks/driver/model.pkl")
-#     return data
+def read_pkl(file_path):
+    with open(file_path, "rb") as pkl:
+        data = dill.load(pkl)
+    return data
 
 def customer_product_stats(stats, data, name):
     stats[f"{name} shape"] = {
@@ -110,7 +81,7 @@ def read_filenames(file_path):
     all_files = os.listdir(file_path)
     file_names = []
     for f in all_files:
-        file_names.append(os.path.splitext(os.path.split(f.path)[-1])[0])
+        file_names.append(os.path.splitext(f)[0])
     return file_names
 
 def read_matrix(file_path):

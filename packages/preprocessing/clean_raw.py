@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 import numpy as np
+from datetime import datetime
 
 from ..utils import utils
 
@@ -17,14 +18,14 @@ EDD_path = config["EDD_path"]["value"]
 CPL_path = config["CPL_path"]["value"]
 UPL_path = config["UPL_path"]["value"]
 
-CSD = pd.read_csv(CSD_path)
-SFD = pd.read_csv(SFD_path)
-RSD = pd.read_csv(RSD_path)
-CWD = pd.read_csv(CWD_path)
-CBD = pd.read_csv(CBD_path)
-EDD = pd.read_csv(EDD_path)
-CPL = pd.read_csv(CPL_path)
-UPL = pd.read_csv(UPL_path)
+CSD = utils.read_table(CSD_path)
+SFD = utils.read_table(SFD_path)
+RSD = utils.read_table(RSD_path)
+CWD = utils.read_table(CWD_path)
+CBD = utils.read_table(CBD_path)
+EDD = utils.read_table(EDD_path)
+CPL = utils.read_table(CPL_path)
+UPL = utils.read_table(UPL_path)
 
 clean_data_path = f"./data/DATA_VERSIONS/{data_version}/CLEAN_RAW_DATA"
 for dirs in [clean_data_path]:
@@ -72,7 +73,7 @@ def replace_na(df, l=null_values):
     for c in l:
         df.replace(c, np.nan, inplace=True)
 
-def assign(x):
+def fix_floats(x):
     if x == "nan":
         return np.nan
     else:
@@ -81,8 +82,10 @@ def assign(x):
     
 def convert_dtype(data,convert):
     for col,col_type in convert.items():
-        if col_type == 'float64':
-            data[col] = data[col].astype('str').apply(assign)
+        if col_type == "float64":
+            data[col] = data[col].astype('str').apply(fix_floats)
+        # elif col_type == "datetime64[ns]":
+        #     data[col] = datetime.strptime(str(data[col]), '%d/%m/%Y %H:%M:%S%p')
         else:
             pass
         data[col] = data[col].astype(col_type)
@@ -619,8 +622,8 @@ DD_rename = {
     "# of Discharges Sum All": "No. of Discharges Sum All",
 }
 
-EDD["# of Discharges"] = EDD["# of Discharges"].astype("str").apply(assign)
-EDD["# of Staffed Beds"] = EDD["# of Staffed Beds"].astype("str").apply(assign)
+EDD["# of Discharges"] = EDD["# of Discharges"].astype("str").apply(fix_floats)
+EDD["# of Staffed Beds"] = EDD["# of Staffed Beds"].astype("str").apply(fix_floats)
 
 convert_dtype(EDD, DD_convert)
 EDD.rename(columns=DD_rename, inplace=True)

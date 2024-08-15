@@ -1,4 +1,5 @@
 from ..utils import utils, cluster
+import os
 import mlflow
 import numpy as np
 import pandas as pd
@@ -10,8 +11,8 @@ from scipy.spatial.distance import squareform
 from scipy.cluster.hierarchy import linkage, cut_tree
 
 config = utils.read_json("./config.json")
-
 data_version = config["data_version"]["value"]
+
 customer_clustering_cutoff_distance = config["customer_clustering_cutoff_distance"]["value"]
 run_customer_feature_wrapping = config["run_customer_feature_wrapping"]["value"]
 customer_top_feature = config["customer_top_feature"]["value"]
@@ -29,11 +30,18 @@ else:
     customer_feature_wrapping_version = config["customer_feature_wrapping_version"]["value"]
 
 customer_data_path = f"./data/DATA_VERSIONS/{data_version}/CUSTOMER_DATA"
+temp_data_path = f"./data/DATA_VERSIONS/{data_version}/CUSTOMER_TEMP_DATA"
+
+for dirs in [customer_data_path,temp_data_path]:
+    try:
+        os.makedirs(dirs)
+    except:
+        pass
 
 features = utils.read_filenames(f"{customer_data_path}/PWD")
 
 for feature in features:
-    with open(f"{feature}","wb") as npy:
+    with open(f"{temp_data_path}/{feature}","wb") as npy:
         np.save(npy,pd.read_parquet(f"{customer_data_path}/PWD/{feature}.parquet")[feature].to_numpy())
 
 customer_feature_wrapping_experiment = "Customer-Feature-Wrapping"
@@ -65,23 +73,26 @@ if run_customer_feature_wrapping:
                 mlflow.log_metric("clusters", len(set(clusters)))
         selected_features.append(wcss_dict[min(wcss_dict)])
 
-client = mlflow.MlflowClient()
-experiment_id = dict(mlflow.get_experiment_by_name(customer_feature_wrapping_experiment))["experiment_id"]
+    client = mlflow.MlflowClient()
+    experiment_id = dict(mlflow.get_experiment_by_name(customer_feature_wrapping_experiment))["experiment_id"]
 
-runs = [
-    run.info.run_id
-    for run in client.search_runs(
-        experiment_ids=experiment_id,
-        filter_string=f"tags.data_version = '{customer_feature_wrapping_version}'",
-        order_by=[f"params.feature_len DESC"]
-    )
-]
+    runs = [
+        run.info.run_id
+        for run in client.search_runs(
+            experiment_ids=experiment_id,
+            filter_string=f"tags.data_version = '{customer_feature_wrapping_version}'",
+            order_by=[f"params.feature_len DESC"]
+        )
+    ]
 
-best_params = client.get_run(runs[0]).data.params.copy()["feature_set"]
+    best_params = client.get_run(runs[0]).data.params.copy()["feature_set"]
 
-selected_features = best_params.replace("[","").replace("]","").replace("'","").split(", ")
-selected_features = selected_features[:customer_top_feature]
+    selected_features = best_params.replace("[","").replace("]","").replace("'","").split(", ")
+    selected_features = selected_features[:customer_top_feature]
 
+else: 
+    selected_features = features
+    
 customer_weight_tuning_experiment = "Customer-Feature-Weights"
 
 if run_customer_weight_tuning:
@@ -110,38 +121,39 @@ if run_customer_weight_tuning:
     study_WCSS = optuna.create_study(direction="minimize",sampler=sampler)
     study_WCSS.optimize(objective_WCSS, n_trials=customer_weight_tuning_trials)
 
-client = mlflow.MlflowClient()
+    client = mlflow.MlflowClient()
 
-experiment_id = dict(mlflow.get_experiment_by_name(customer_weight_tuning_experiment))["experiment_id"]
+    experiment_id = dict(mlflow.get_experiment_by_name(customer_weight_tuning_experiment))["experiment_id"]
 
-runs = [
-    run.info.run_id
-    for run in client.search_runs(
-        experiment_ids=experiment_id,
-        filter_string=f"tags.data_version = '{customer_weight_tuning_version}'",
-        order_by=["metrics.WCSS"],
-    )
-]
+    runs = [
+        run.info.run_id
+        for run in client.search_runs(
+            experiment_ids=experiment_id,
+            filter_string=f"tags.data_version = '{customer_weight_tuning_version}'",
+            order_by=["metrics.WCSS"],
+        )
+    ]
 
-best_params = client.get_run(runs[0]).data.params.copy()
+    best_params = client.get_run(runs[0]).data.params.copy()
 
-del best_params["cutoff_distance"]
+    del best_params["cutoff_distance"]
+
+    weights = {feature: float(weight) for feature, weight in best_params.items()}
+    for feature in set(features).difference(set(best_params.keys())):
+        weights[feature] = sum([float(weight) for weight in best_params.values()])/len(best_params)
+
+    weights = {feature: weights[feature] for feature in selected_features}
+    
+else:
+    weights = {feature: 1/len(feature) for feature in selected_features}
+
 cutoff_distance = customer_clustering_cutoff_distance
 
-weights = {feature: float(weight) for feature, weight in best_params.items()}
-for feature in set(features).difference(set(best_params.keys())):
-    weights[feature] = sum([float(weight) for weight in best_params.values()])/len(best_params)
-
-weights = {feature: weights[feature] for feature in selected_features}
-
-print(f"Cutoff Distance: {cutoff_distance}")
+# print(f"Cutoff Distance: {cutoff_distance}")
 wt_df = pd.DataFrame([[feature,weight] for feature,weight in weights.items()],columns=["Feature","Weights"])
 wt_df.sort_values("Weights",ascending=False).reset_index(drop=True)
 
-wpwd = cluster.weighted_pairwise(weights)
-
-# for feature in selected_features:
-#     dbutils.fs.rm(f"file:/databricks/driver/{feature}")
+wpwd = cluster.weighted_pairwise(weights,temp_data_path)
 
 customers = pd.read_parquet(f"{customer_data_path}/customer_details.parquet")
 

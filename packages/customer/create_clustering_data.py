@@ -8,7 +8,7 @@ data_version = config["data_version"]["value"]
 raw_data_path = f"./data/DATA_VERSIONS/{data_version}/BEFORE_CUTOFF_RAW"
 
 customer_data_path = f"./data/DATA_VERSIONS/{data_version}/CUSTOMER_DATA"
-for dirs in [customer_data_path]:
+for dirs in [raw_data_path,customer_data_path]:
     try:
         os.makedirs(dirs)
     except:
